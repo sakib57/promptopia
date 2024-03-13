@@ -11,7 +11,7 @@ export const connectToDB = async () => {
     }
 
     try{
-        await mongoose.connect(process.env.MONGODB_URI,{
+        await mongoose.connect("mongodb+srv://sakib57:sakib984@xtreem.wnemiwq.mongodb.net/?retryWrites=true&w=majority&appName=Xtreem",{
             dbName: "share_prompt",
             useNewUrlParser: true,
             useUnifiedTopology: true,
