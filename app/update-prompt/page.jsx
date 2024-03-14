@@ -5,7 +5,7 @@ import { Suspense, useEffect, useState } from "react";
 
 const EditPrompt = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const searchParams = Suspense.useSearchParams();
   const promptId = searchParams.get("id");
 
   const [submitting, setSubmitting] = useState(false);
@@ -52,7 +52,6 @@ const EditPrompt = () => {
   };
 
   return (
-    <Suspense>
       <Form
         type="Update"
         post={post}
@@ -60,7 +59,6 @@ const EditPrompt = () => {
         submitting={submitting}
         handleSubmit={updatePrompt}
       />
-    </Suspense>
   );
 };
 
